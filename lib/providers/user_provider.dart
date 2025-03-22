@@ -14,24 +14,24 @@ class UserProvider with ChangeNotifier {
     _isLoading = true;
     notifyListeners();
 
-    // 模拟API调用延迟
+    // 模拟加载延迟
     await Future.delayed(const Duration(seconds: 1));
 
     // 模拟用户数据
     _user = UserModel(
       id: '1',
       username: '测试用户',
-      avatar: 'https://picsum.photos/200',
+      avatar: 'https://ui-avatars.com/api/?name=测试用户&background=random',
       email: 'test@example.com',
       learningDays: 7,
-      totalStudyHours: 15,
-      stars: 120,
+      totalStudyHours: 12,
+      stars: 150,
       achievements: [
         Achievement(
           id: '1',
-          title: '初出茅庐',
+          title: '初学乍练',
           description: '完成第一课',
-          icon: 'trophy',
+          icon: Icons.star,
           isUnlocked: true,
           unlockedAt: DateTime.now().subtract(const Duration(days: 5)),
         ),
@@ -39,48 +39,41 @@ class UserProvider with ChangeNotifier {
           id: '2',
           title: '坚持不懈',
           description: '连续学习7天',
-          icon: 'fire',
+          icon: Icons.local_fire_department,
           isUnlocked: true,
           unlockedAt: DateTime.now().subtract(const Duration(days: 1)),
         ),
         Achievement(
           id: '3',
-          title: '学霸',
-          description: '获得100颗星',
-          icon: 'crown',
-          isUnlocked: true,
-          unlockedAt: DateTime.now().subtract(const Duration(hours: 2)),
-        ),
-        Achievement(
-          id: '4',
-          title: '语言大师',
-          description: '完成所有课程',
-          icon: 'award',
+          title: '词汇达人',
+          description: '掌握100个单词',
+          icon: Icons.auto_awesome,
           isUnlocked: false,
+          unlockedAt: null,
         ),
       ],
       courseProgress: [
         CourseProgress(
           courseId: '1',
-          courseName: '基础发音',
+          courseName: '基础会话',
           completedLessons: 5,
           totalLessons: 10,
           progress: 0.5,
         ),
         CourseProgress(
           courseId: '2',
-          courseName: '日常对话',
-          completedLessons: 3,
-          totalLessons: 15,
-          progress: 0.2,
+          courseName: '商务中文',
+          completedLessons: 2,
+          totalLessons: 8,
+          progress: 0.25,
         ),
       ],
       settings: UserSettings(
         notificationsEnabled: true,
-        language: 'zh',
+        language: 'zh_CN',
         darkMode: false,
         privacyMode: false,
-        themeColor: '#4CAF50',
+        themeColor: '#2196F3',
       ),
     );
 

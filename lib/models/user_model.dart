@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class UserModel {
   final String id;
   final String username;
@@ -47,7 +49,7 @@ class Achievement {
   final String id;
   final String title;
   final String description;
-  final String icon;
+  final IconData icon;
   final bool isUnlocked;
   final DateTime? unlockedAt;
 
@@ -65,7 +67,7 @@ class Achievement {
       id: json['id'],
       title: json['title'],
       description: json['description'],
-      icon: json['icon'],
+      icon: IconData(json['icon'], fontFamily: 'MaterialIcons'),
       isUnlocked: json['isUnlocked'],
       unlockedAt: json['unlockedAt'] != null
           ? DateTime.parse(json['unlockedAt'])

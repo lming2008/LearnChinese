@@ -521,24 +521,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  IconData _getAchievementIcon(String icon) {
-    switch (icon) {
-      case 'trophy':
-        return FontAwesomeIcons.trophy;
-      case 'fire':
-        return FontAwesomeIcons.fire;
-      case 'crown':
-        return FontAwesomeIcons.crown;
-      case 'award':
-        return FontAwesomeIcons.award;
-      case 'medal':
-        return FontAwesomeIcons.medal;
-      case 'certificate':
-        return FontAwesomeIcons.certificate;
-      case 'gem':
-        return FontAwesomeIcons.gem;
-      default:
-        return FontAwesomeIcons.star;
-    }
+  IconData _getAchievementIcon(IconData icon) {
+    return icon;
   }
 } 

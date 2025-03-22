@@ -60,9 +60,6 @@ dependencies:
   # 权限管理
   permission_handler: ^11.3.0
   
-  # 音频播放
-  just_audio: ^0.9.36
-  
   # 视频播放
   video_player: ^2.8.2
   
